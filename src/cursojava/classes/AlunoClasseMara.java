@@ -6,18 +6,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
-public class AlunoClasseMara {
-    private String nome;
-    private int idade;
-    private String dataNascimento;
-    private String registroGeral;
-    private String numeroCpf;
-    private String nomeMae;
-    private String nomePai;
+public class AlunoClasseMara extends Pessoa {
     private String dataMatricula;
     private String nomeEscola;
     private String serieMatriculado;
-    public List<Disciplina> disciplinas = new ArrayList();
+    private List<Disciplina> disciplinas = new ArrayList();
 
     public void setDisciplinas(List<Disciplina> disciplinas) {
         this.disciplinas = disciplinas;
@@ -31,12 +24,12 @@ public class AlunoClasseMara {
     }
 
     public AlunoClasseMara(String nomeInicial) {
-        this.nome = nomeInicial;
+        super.nome = nomeInicial;
     }
 
     public AlunoClasseMara(String nomePadrao, int idadePadrao) {
-        this.nome = nomePadrao;
-        this.idade = idadePadrao;
+        super.nome = nomePadrao;
+        super.idade = idadePadrao;
     }
 
     public double getMedia() {
@@ -157,5 +150,22 @@ public class AlunoClasseMara {
 
     public int hashCode() {
         return Objects.hash(new Object[]{this.getNome(), this.getNomeMae()});
+    }
+
+    @Override
+    public String toString() {
+        return "AlunoClasseMara{" +
+                "dataMatricula='" + dataMatricula + '\'' +
+                ", nomeEscola='" + nomeEscola + '\'' +
+                ", serieMatriculado='" + serieMatriculado + '\'' +
+                ", disciplinas=" + disciplinas +
+                ", nome='" + nome + '\'' +
+                ", idade=" + idade +
+                ", dataNascimento='" + dataNascimento + '\'' +
+                ", registroGeral='" + registroGeral + '\'' +
+                ", numeroCpf='" + numeroCpf + '\'' +
+                ", nomeMae='" + nomeMae + '\'' +
+                ", nomePai='" + nomePai + '\'' +
+                '}';
     }
 }
