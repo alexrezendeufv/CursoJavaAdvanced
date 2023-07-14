@@ -168,4 +168,13 @@ public class AlunoClasseMara extends Pessoa {
                 ", nomePai='" + nomePai + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean pessoaMaiorIdade() {
+        return super.idade >=16;
+    }
+
+    public String msgMaiorIdade(){
+        return this.pessoaMaiorIdade() ? "Oba aluno é maior de idade" : "Aluno é menor de idade";
+    }
 }
